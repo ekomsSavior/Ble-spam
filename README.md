@@ -32,9 +32,10 @@ sudo hciconfig hci0 up
 Download the script from GitHub:
 
 git clone https://github.com/ekomsSavior/Ble-spam
+
 cd BLE-Spammer
 
-4️⃣ Edit the Script
+4️⃣ Edit the Script : 📜 **Script File:** [Ble_spam.py](https://github.com/ekomsSavior/Ble-spam/blob/main/Ble_spam.py)
 
 Before running, open the script and replace XX:XX:XX:XX:XX:XX with the MAC address of your target BLE device:
 
@@ -68,13 +69,10 @@ pip3 install --upgrade bluepy
 
 sudo hciconfig hci0 reset
 
-	•	Try running the script again.
+try running the script again
 
 📜 Legal & Ethical Considerations
 	•	This script should be used only on devices you own or have permission to test.
 	•	DO NOT use this for malicious purposes.
 	•	Use responsibly in controlled environments.
 
-⸻
-
-That should make it easy-to-follow for your GitHub followers! 🚀 Let me know if you need tweaks, fren! 🫂💖
