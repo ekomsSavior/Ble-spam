@@ -1,55 +1,80 @@
-BLE SPAM 
+BLE Spammer Script
 
-Prepare Your Environment
-	•	Ensure Your BLE Adapter is Recognized:
-> hciconfig
+A Python script that continuously sends messages to a BLE device, flooding it with spam messages.
 
-•	If it’s down, activate it:
-> sudo hciconfig hci0 up
+⚠️ Disclaimer
 
-•	Install Required Tools:
-	•	Update and upgrade your system:
- > sudo apt update && sudo apt upgrade -y
+This script is for educational and research purposes only. Unauthorized BLE spamming may be illegal in your country. Use responsibly in controlled environments.
 
-•	Install bluez, hcxdumptool, and bettercap:
-> sudo apt install bluez hcxdumptool bettercap -y
+🔧 Requirements
 
-2. Choose a BLE Spamming Tool
+Before running this script, ensure your Kali Linux environment has the necessary dependencies.
 
-There are several tools you can use to spam BLE packets. Below are two popular options:
+1️⃣ Install Dependencies
 
-Option 1: Using Bettercap
+Run the following command to install required packages:
 
-Bettercap is versatile for BLE scanning and manipulation.
-	1.	Start Bettercap:
- > sudo bettercap -caplet ble
+sudo apt update && sudo apt install -y python3-pip bluetooth libbluetooth-dev
+pip3 install bluepy
 
-2.	Enable BLE Advertising Spam:
-	•	In the Bettercap session, run:
-> ble.recon on
-> ble.advertise on
-> ble.advertise.custom "Your Custom Message Here"
+2️⃣ Enable Bluetooth Interface
 
-•	Replace "Your Custom Message Here" with the payload or advertisement you want to spam.
+Make sure your Bluetooth adapter is properly recognized:
 
-	3.	Monitor and Adjust:
-	> 	Use ble.show to see nearby BLE devices and monitor your spam.
+hciconfig
 
-*Using Custom Python Scripts
+If your adapter is listed but not up, enable it:
 
-You can use Python with the bluepy or pybluez library to create custom BLE advertisements.
-	1.	Install Dependencies:
- > pip install bluepy 
+sudo hciconfig hci0 up
 
-Write a BLE Advertisement Script: see ble_spam.py file 
+3️⃣ Clone the Repository
 
-Run 5e Script:
-> python3 ble_spam.py
+Download the script from GitHub:
 
-Test Your Setup
-	•	Use a BLE scanner (e.g., nRF Connect on your phone) to verify that your BLE spam is being broadcast.
-	•	Adjust payloads and frequencies as needed.
+git clone https://github.com/yourusername/BLE-Spammer.git
+cd BLE-Spammer
 
-Compliance: Be mindful of local laws and regulations regarding BLE spamming.
+4️⃣ Edit the Script
 
+Before running, open the script and replace XX:XX:XX:XX:XX:XX with the MAC address of your target BLE device:
 
+target_mac = "XX:XX:XX:XX:XX:XX"
+
+You can find the BLE MAC address by scanning with:
+
+hcitool lescan
+
+5️⃣ Run the Script
+
+Start spamming the BLE device by running:
+
+python3 ble_spam.py
+
+🛑 Stop the Attack
+
+Press CTRL + C to stop the script at any time.
+
+🛠 Troubleshooting
+
+✅ “bluepy not found” error
+
+If bluepy is not installed correctly, try:
+
+pip3 install --upgrade bluepy
+
+✅ “Failed to connect to device” error
+	•	Ensure the target BLE device is within range.
+	•	Reset your Bluetooth adapter:
+
+sudo hciconfig hci0 reset
+
+	•	Try running the script again.
+
+📜 Legal & Ethical Considerations
+	•	This script should be used only on devices you own or have permission to test.
+	•	DO NOT use this for malicious purposes.
+	•	Use responsibly in controlled environments.
+
+⸻
+
+That should make it easy-to-follow for your GitHub followers! 🚀 Let me know if you need tweaks, fren! 🫂💖
