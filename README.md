@@ -31,7 +31,7 @@ sudo hciconfig hci0 up
 
 Download the script from GitHub:
 
-git clone 
+git clone https://github.com/ekomsSavior/Ble-spam/tree/main
 cd BLE-Spammer
 
 4️⃣ Edit the Script
